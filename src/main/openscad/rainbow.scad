@@ -35,6 +35,8 @@ radius = 100; // [80:200]
 width = 10; // [1:10]
 // How thick should be the rainbow
 rainbowThick = 5; // [2:10]
+// Change of thickness between colors
+thickStep = 0; // [-2:.1:2]
 // How thick should be clouds
 cloudThick = 6; // [2:15]
 // How width will be black border
@@ -60,7 +62,7 @@ difference() {
   union() {
     sections();
     make("black") {
-      segment(radius + width, borderWidth);
+      segment(radius + width, rainbowThick - thickStep, borderWidth);
       bowBorder();
     }
   }
@@ -91,7 +93,7 @@ module bowBorder(index = 1, off = 0) {
       bowBorder(index + 1, off);
     }
   } else {
-    segment(radius - (off - 1) * width - borderWidth, borderWidth);
+    segment(radius - (off - 1) * width - borderWidth, rainbowThick + off * thickStep, borderWidth);
   }
 }
 
@@ -100,7 +102,7 @@ module sections(index = 1, off = 0) {
     col = parts[index];
     if (col[1]) {
       make(col[0])
-      segment(radius - off * width);
+      segment(radius - off * width, rainbowThick + off * thickStep);
 
       sections(index + 1, off + 1);
     } else {
@@ -109,10 +111,10 @@ module sections(index = 1, off = 0) {
   }
 }
 
-module segment(radius, width = width) {
+module segment(radius, thick, width = width) {
   rotate_extrude(angle = 180)
     translate([radius, 0, 0])
-      square([width, rainbowThick]);
+      square([width, thick]);
 }
 
 module cloudBorder(definitions) {

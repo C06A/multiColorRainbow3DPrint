@@ -44,3 +44,6 @@ of base center for each cylinder and loop over collection of them. All values he
 17. Instead of predefined radiuses calculate them based on selected colors
     1. Use a recursive module to calculate the radius of each color
     2. Use the similar recursive module to calculate the radius of the border
+18. Add vertical offset for each color for ease of paint when print as a single piece
+    1. Add new constant for height of the step
+    2. Offset height of each color

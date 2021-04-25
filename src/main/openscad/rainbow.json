@@ -14,8 +14,10 @@
             "red": "false",
             "white": "false",
             "width": "10",
-            "yellow": "false"
-        },
+            "yellow": "false",
+            "indigo": "false",
+            "violet": "false"
+    },
         "white": {
             "$fn": "25",
             "black": "false",
@@ -30,7 +32,9 @@
             "red": "false",
             "white": "true",
             "width": "10",
-            "yellow": "false"
+            "yellow": "false",
+            "indigo": "false",
+            "violet": "false"
         },
         "red": {
             "$fn": "25",
@@ -46,7 +50,9 @@
             "red": "true",
             "white": "false",
             "width": "10",
-            "yellow": "false"
+            "yellow": "false",
+            "indigo": "false",
+            "violet": "false"
         },
         "orange": {
             "$fn": "25",
@@ -62,7 +68,9 @@
             "red": "false",
             "white": "false",
             "width": "10",
-            "yellow": "false"
+            "yellow": "false",
+            "indigo": "false",
+            "violet": "false"
         },
         "yellow": {
             "$fn": "25",
@@ -78,7 +86,9 @@
             "red": "false",
             "white": "false",
             "width": "10",
-            "yellow": "true"
+            "yellow": "true",
+            "indigo": "false",
+            "violet": "false"
         },
         "green": {
             "$fn": "25",
@@ -94,7 +104,9 @@
             "red": "false",
             "white": "false",
             "width": "10",
-            "yellow": "false"
+            "yellow": "false",
+            "indigo": "false",
+            "violet": "false"
         },
         "blue": {
             "$fn": "25",
@@ -110,7 +122,9 @@
             "red": "false",
             "white": "false",
             "width": "10",
-            "yellow": "false"
+            "yellow": "false",
+            "indigo": "false",
+            "violet": "false"
         },
         "purple": {
             "$fn": "25",
@@ -126,7 +140,45 @@
             "red": "false",
             "white": "false",
             "width": "10",
-            "yellow": "false"
+            "yellow": "false",
+            "indigo": "false",
+            "violet": "false"
+        },
+        "indigo": {
+            "$fn": "25",
+            "black": "false",
+            "blue": "false",
+            "borderThick": "2",
+            "cloudThick": "6",
+            "green": "false",
+            "orange": "false",
+            "purple": "false",
+            "radius": "100",
+            "rainbowThick": "5",
+            "red": "false",
+            "white": "false",
+            "width": "10",
+            "yellow": "false",
+            "indigo": "true",
+            "violet": "false"
+        },
+        "violet": {
+            "$fn": "25",
+            "black": "false",
+            "blue": "false",
+            "borderThick": "2",
+            "cloudThick": "6",
+            "green": "false",
+            "orange": "false",
+            "purple": "false",
+            "radius": "100",
+            "rainbowThick": "5",
+            "red": "false",
+            "white": "false",
+            "width": "10",
+            "yellow": "false",
+            "indigo": "false",
+            "violet": "true"
         }
     },
     "fileFormatVersion": "1"
