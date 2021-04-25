@@ -20,4 +20,6 @@ and use their names instead of numeric values
 8. Another way to build solids is to use 3D shape functions. For the clouds let's use cylinder
 9. Each cloud built off a set of cylinders. Let's also define the pairs of radius and coordinates
 of base center for each cylinder and loop over collection of them. All values here defined
-   relative to the radius of the rainbow and will scale with later
+   relative to the radius of the rainbow and will scale with latter
+10. Follow the same approach let's create the right cloud. Both left and right clouds
+    could be created from the single collection of pairs, but keeping separate may be useful later

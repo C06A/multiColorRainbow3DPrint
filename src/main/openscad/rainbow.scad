@@ -18,6 +18,14 @@ cloudsLeft = [
     [.11 * radius, [- (.4 * radius), 1 * width, 0]]
   ];
 
+cloudsRight = [
+    [.1 * radius, [radius, 0, 0]],
+    [.16 * radius, [.8 * radius, 0, 0]],
+    [.15 * radius, [.6 * radius, 1.2 * width, 0]],
+    [.15 * radius, [.4 * radius, 0, 0]],
+    [.1 * radius, [.58 * radius, - .2 * width, 0]]
+  ];
+
 color("black")
   segment(radius, 2);
 
@@ -30,8 +38,9 @@ color("black")
   segment(radius - 6 * width - 2, 2);
 
 cloud(cloudsLeft);
+cloud(cloudsRight);
 
-module segment(radius, width = 10) {
+module segment(radius, width = width) {
   rotate_extrude(angle = 180)
     translate([radius, 0, 0])
       square([width, rainbowThick]);
