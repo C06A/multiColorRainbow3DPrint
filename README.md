@@ -35,3 +35,6 @@ of base center for each cylinder and loop over collection of them. All values he
     1. Let's add boolean parameter for each color controlling if include element or not
     2. Combining them in the collection allows easy way to check if specific color should be included
     3. Instead of call for function "color("...")" let's call a new module
+15. Remove rainbow from inside the cloud, so they won't overlap when printed separetely
+    1. Combine all rainbow colors and borders with union function
+    2. Subtract from rainbow both clouds and their borders

@@ -61,16 +61,26 @@ cloudsRight = [
     [.1 * radius, [.58 * radius, - .2 * width, 0]]
   ];
 
+difference() {
+  union() {
+    for (i = sections) {
+      make(i[0])
+      segment(i[1]);
+    }
+    make("black") {
+      segment(radius, borderWidth);
+      segment(radius - len(sections) * width - borderWidth, borderWidth);
+    }
+  }
 
-for (i = sections) {
-  make(i[0])
-    segment(i[1]);
+  cloudBorder(cloudsLeft);
+  cloudBorder(cloudsRight);
+
+  cloud(cloudsLeft);
+  cloud(cloudsRight);
 }
 
-color("black") {
-  segment(radius, borderWidth);
-  segment(radius - len(sections) * width - borderWidth, borderWidth);
-
+make("black") {
   cloudBorder(cloudsLeft);
   cloudBorder(cloudsRight);
 }
@@ -88,10 +98,10 @@ module segment(radius, width = width) {
 
 module cloudBorder(definitions) {
   make("black")
-    difference() {
-      cloud(definitions, borderWidth);
-      cloud(definitions);
-    }
+  difference() {
+    cloud(definitions, borderWidth);
+    cloud(definitions);
+  }
 }
 
 module cloud(definitions, off = 0) {
