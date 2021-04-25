@@ -38,3 +38,6 @@ of base center for each cylinder and loop over collection of them. All values he
 15. Remove rainbow from inside the cloud, so they won't overlap when printed separetely
     1. Combine all rainbow colors and borders with union function
     2. Subtract from rainbow both clouds and their borders
+16. Add presets to isolate each color for slicing/printing
+    1. In the Customizer panel deselect all colors
+    2. Enable single color and safe preset or rendered STL file
