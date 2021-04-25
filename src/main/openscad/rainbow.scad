@@ -1,6 +1,7 @@
 radius = 100;
 width = 10;
 rainbowThick = 5;
+cloudThick = 6;
 
 sections = [
     ["red", radius - width],
@@ -47,8 +48,13 @@ module segment(radius, width = width) {
 }
 
 module cloud(definitions) {
+  color("black")
+    for (i = definitions)
+    translate(i[1])
+      cylinder(cloudThick, i[0] + 2, i[0] + 2);
+
   color("white")
     for (i = definitions)
     translate(i[1])
-      cylinder(6, i[0], i[0]);
+      cylinder(cloudThick, i[0], i[0]);
 }
