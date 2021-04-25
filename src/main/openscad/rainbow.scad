@@ -27,19 +27,23 @@ cloudsRight = [
     [.1 * radius, [.58 * radius, - .2 * width, 0]]
   ];
 
-color("black")
-  segment(radius, 2);
-
 for (i = sections) {
   color(i[0])
     segment(i[1]);
 }
 
-color("black")
+color("black") {
+  segment(radius, 2);
   segment(radius - 6 * width - 2, 2);
 
-cloud(cloudsLeft);
-cloud(cloudsRight);
+  cloudBorder(cloudsLeft);
+  cloudBorder(cloudsRight);
+}
+
+color("white") {
+  cloud(cloudsLeft);
+  cloud(cloudsRight);
+}
 
 module segment(radius, width = width) {
   rotate_extrude(angle = 180)
@@ -47,14 +51,16 @@ module segment(radius, width = width) {
       square([width, rainbowThick]);
 }
 
-module cloud(definitions) {
+module cloudBorder(definitions) {
   color("black")
-    for (i = definitions)
-    translate(i[1])
-      cylinder(cloudThick, i[0] + 2, i[0] + 2);
+    difference() {
+      cloud(definitions, 2);
+      cloud(definitions);
+    }
+}
 
-  color("white")
-    for (i = definitions)
-    translate(i[1])
-      cylinder(cloudThick, i[0], i[0]);
+module cloud(definitions, off = 0) {
+  for (i = definitions)
+  translate(i[1])
+    cylinder(cloudThick, i[0] + off, i[0] + off);
 }

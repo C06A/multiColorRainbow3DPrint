@@ -25,3 +25,5 @@ of base center for each cylinder and loop over collection of them. All values he
     could be created from the single collection of pairs, but keeping separate may be useful later
 11. In order to add the border around the cloud let's add black cylinders with a bit bigger radius.
     Then white cylinder later will override the middle of black cylinder with white cloud
+12. Little reorganisation of the code to combine all black elements together and remove
+    colors out of the modules
