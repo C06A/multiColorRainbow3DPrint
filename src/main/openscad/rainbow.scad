@@ -22,6 +22,10 @@ for (i = sections) {
 color("black")
   segment(radius - 6 * width - 2, 2);
 
+color("white")
+  translate([- radius, 0, 0])
+    cylinder(6, .22 * radius, .22 * radius);
+
 module segment(radius, width = 10) {
   rotate_extrude(angle = 180)
     translate([radius, 0, 0])
