@@ -31,3 +31,7 @@ of base center for each cylinder and loop over collection of them. All values he
     1. Single line comments before constant definition contains the description of the value
     2. in-line comment in the same row defines the widget to select the value and limitations
     3. Multi-line comment with text in square brackets defines the name of the group
+14. To print all this in different colors the model should be rendered separately for each color
+    1. Let's add boolean parameter for each color controlling if include element or not
+    2. Combining them in the collection allows easy way to check if specific color should be included
+    3. Instead of call for function "color("...")" let's call a new module

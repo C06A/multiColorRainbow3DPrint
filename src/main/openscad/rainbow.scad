@@ -3,6 +3,27 @@
 // rounds' segments
 $fn = 25; // [10:rough,25:default,100:fine]
 
+/* [Color parts] */
+black = true;
+red = true;
+orange = true;
+yellow = true;
+green = true;
+blue = true;
+purple = true;
+white = true;
+
+parts = [
+    ["black", black],
+    ["red", red],
+    ["orange", orange],
+    ["yellow", yellow],
+    ["green", green],
+    ["blue", blue],
+    ["purple", purple],
+    ["white", white]
+  ];
+
 /* [Dimensions] */
 // The big radius of the rainbow
 radius = 100; // [80:200]
@@ -42,7 +63,7 @@ cloudsRight = [
 
 
 for (i = sections) {
-  color(i[0])
+  make(i[0])
     segment(i[1]);
 }
 
@@ -54,7 +75,7 @@ color("black") {
   cloudBorder(cloudsRight);
 }
 
-color("white") {
+make("white") {
   cloud(cloudsLeft);
   cloud(cloudsRight);
 }
@@ -66,7 +87,7 @@ module segment(radius, width = width) {
 }
 
 module cloudBorder(definitions) {
-  color("black")
+  make("black")
     difference() {
       cloud(definitions, borderWidth);
       cloud(definitions);
@@ -77,4 +98,13 @@ module cloud(definitions, off = 0) {
   for (i = definitions)
   translate(i[1])
     cylinder(cloudThick, i[0] + off, i[0] + off);
+}
+
+module make(clr) {
+  for (i = parts) {
+    if (clr == i[0] && i[1]) {
+      color(i[0])
+        children();
+    }
+  }
 }
