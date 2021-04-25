@@ -41,3 +41,6 @@ of base center for each cylinder and loop over collection of them. All values he
 16. Add presets to isolate each color for slicing/printing
     1. In the Customizer panel deselect all colors
     2. Enable single color and safe preset or rendered STL file
+17. Instead of predefined radiuses calculate them based on selected colors
+    1. Use a recursive module to calculate the radius of each color
+    2. Use the similar recursive module to calculate the radius of the border
