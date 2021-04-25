@@ -7,3 +7,4 @@ The final variation includes the customization, so it can be used directly on [T
 
 1. There are different ways to create solids in OpenSCAD. For rainbow let's start with rectangular
 cross-section
+2. Move the cross-section into distance from the Z-axes
