@@ -27,3 +27,7 @@ of base center for each cylinder and loop over collection of them. All values he
     Then white cylinder later will override the middle of black cylinder with white cloud
 12. Little reorganisation of the code to combine all black elements together and remove
     colors out of the modules
+13. Add to the values information for configurator
+    1. Single line comments before constant definition contains the description of the value
+    2. in-line comment in the same row defines the widget to select the value and limitations
+    3. Multi-line comment with text in square brackets defines the name of the group

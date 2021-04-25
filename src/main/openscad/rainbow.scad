@@ -1,8 +1,21 @@
-radius = 100;
-width = 10;
-rainbowThick = 5;
-cloudThick = 6;
+/* [Detalization] */
 
+// rounds' segments
+$fn = 25; // [10:rough,25:default,100:fine]
+
+/* [Dimensions] */
+// The big radius of the rainbow
+radius = 100; // [80:200]
+// the width of each color of rainbow
+width = 10; // [1:10]
+// How thick should be the rainbow
+rainbowThick = 5; // [2:10]
+// How thick should be clouds
+cloudThick = 6; // [2:15]
+// How width will be black border
+borderWidth = 2; // [1:5]
+
+/* [Hidden] */
 sections = [
     ["red", radius - width],
     ["orange", radius - 2 * width],
@@ -27,14 +40,15 @@ cloudsRight = [
     [.1 * radius, [.58 * radius, - .2 * width, 0]]
   ];
 
+
 for (i = sections) {
   color(i[0])
     segment(i[1]);
 }
 
 color("black") {
-  segment(radius, 2);
-  segment(radius - 6 * width - 2, 2);
+  segment(radius, borderWidth);
+  segment(radius - len(sections) * width - borderWidth, borderWidth);
 
   cloudBorder(cloudsLeft);
   cloudBorder(cloudsRight);
@@ -54,7 +68,7 @@ module segment(radius, width = width) {
 module cloudBorder(definitions) {
   color("black")
     difference() {
-      cloud(definitions, 2);
+      cloud(definitions, borderWidth);
       cloud(definitions);
     }
 }
