@@ -9,3 +9,5 @@ The final variation includes the customization, so it can be used directly on [T
 cross-section
 2. Move the cross-section into distance from the Z-axes
 3. User one of extrusion function to make a bow
+4. Instead of copy-past let's make a module do call multiple times. The module takes 2 arguments,
+   one of which optional with default value
