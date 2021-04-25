@@ -1,17 +1,21 @@
+radius = 100;
+width = 10;
+rainbowThick = 5;
+
 color("black")
-  segment(110, 2);
+  segment(radius + width, 2);
 
 color("red")
-  segment(100);
+  segment(radius);
 
 color("orange")
-  segment(90);
+  segment(radius - width);
 
 color("black")
-  segment(90 - 2, 2);
+  segment(radius - width - 2, 2);
 
 module segment(radius, width = 10) {
   rotate_extrude(angle = 180)
     translate([radius, 0, 0])
-      square([width, 5]);
+      square([width, rainbowThick]);
 }

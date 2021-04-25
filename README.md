@@ -13,3 +13,5 @@ cross-section
    one of which optional with default value
 5. The same module can make as border of the rainbow. For that,
    override the default value of the optional argument
+6. In order to avoid duplication of the code or values, let's define constants
+and use their names instead of numeric values
