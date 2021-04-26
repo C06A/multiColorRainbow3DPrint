@@ -47,3 +47,8 @@ of base center for each cylinder and loop over collection of them. All values he
 18. Add vertical offset for each color for ease of paint when print as a single piece
     1. Add new constant for height of the step
     2. Offset height of each color
+19. Enabling/disabling colors messing up the location of each color and radius of the last border
+    1. Setting the start number shifting colors off the most out place in
+    2. Setting the end number allows for empty places before the most inner border
+    3. Save presets with correct start number for each color and separate preset for 6 and 7 color
+    rainbow borders

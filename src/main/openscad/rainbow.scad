@@ -10,9 +10,9 @@ orange = true;
 yellow = true;
 green = true;
 blue = true;
-indigo = true;
+indigo = false;
 purple = true;
-violet = true;
+violet = false;
 white = true;
 
 parts = [
@@ -41,6 +41,10 @@ thickStep = 0; // [-2:.1:2]
 cloudThick = 6; // [2:15]
 // How width will be black border
 borderWidth = 2; // [1:5]
+// The number of the first color
+startColorNum = 0; // [0:8]
+// The number of the last clolr
+endColorNum = 6; // [0:8]
 
 /* [Hidden] */
 cloudsLeft = [
@@ -84,7 +88,7 @@ make("white") {
   cloud(cloudsRight);
 }
 
-module bowBorder(index = 1, off = 0) {
+module bowBorder(index = 1, off = startColorNum) {
   if (index < (len(parts) - 1)) {
     col = parts[index];
     if (col[1]) {
@@ -93,7 +97,8 @@ module bowBorder(index = 1, off = 0) {
       bowBorder(index + 1, off);
     }
   } else {
-    segment(radius - (off - 1) * width - borderWidth, rainbowThick + off * thickStep, borderWidth);
+    borderOffset = max(off, endColorNum);
+    segment(radius - (borderOffset - 1) * width - borderWidth, rainbowThick + borderOffset * thickStep, borderWidth);
   }
 }
 
@@ -102,7 +107,7 @@ module sections(index = 1, off = 0) {
     col = parts[index];
     if (col[1]) {
       make(col[0])
-      segment(radius - off * width, rainbowThick + off * thickStep);
+      segment(radius - (off + startColorNum) * width, rainbowThick + off * thickStep);
 
       sections(index + 1, off + 1);
     } else {
