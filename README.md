@@ -52,3 +52,7 @@ of base center for each cylinder and loop over collection of them. All values he
     2. Setting the end number allows for empty places before the most inner border
     3. Save presets with correct start number for each color and separate preset for 6 and 7 color
     rainbow borders
+20. Add option to build clouds out of spheres
+    1. Add customization option to choose the shape of the clouds
+    2. Base on that option use function sphere() function instead of cylinder()
+    3. Skip cloud border if clouds built with spheres

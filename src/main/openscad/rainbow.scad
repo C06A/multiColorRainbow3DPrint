@@ -1,7 +1,9 @@
-/* [Detalization] */
+/* [Shapes] */
 
 // rounds' segments
 $fn = 25; // [10:rough,25:default,100:fine]
+// Shape of clouds
+cloudShape = "flat"; // [flat,sphare]
 
 /* [Color parts] */
 black = true;
@@ -55,11 +57,11 @@ cloudsLeft = [
   ];
 
 cloudsRight = [
-    [.1 * radius, [radius, 0, 0]],
-    [.16 * radius, [.8 * radius, 0, 0]],
+    [.15 * radius, [radius, 0, 0]],
+    [.18 * radius, [.8 * radius, 0, 0]],
     [.15 * radius, [.6 * radius, 1.2 * width, 0]],
-    [.15 * radius, [.4 * radius, 0, 0]],
-    [.1 * radius, [.58 * radius, - .2 * width, 0]]
+    [.18 * radius, [.4 * radius, -1, 0]],
+    [.12 * radius, [.58 * radius, - .2 * width, 0]]
   ];
 
 difference() {
@@ -123,6 +125,7 @@ module segment(radius, thick, width = width) {
 }
 
 module cloudBorder(definitions) {
+  if (cloudShape == "flat")
   make("black")
   difference() {
     cloud(definitions, borderWidth);
@@ -133,7 +136,10 @@ module cloudBorder(definitions) {
 module cloud(definitions, off = 0) {
   for (i = definitions)
   translate(i[1])
-    cylinder(cloudThick, i[0] + off, i[0] + off);
+    if (cloudShape == "flat")
+      cylinder(cloudThick, i[0] + off, i[0] + off);
+    else
+      sphere(i[0]);
 }
 
 module make(clr) {
